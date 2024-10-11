@@ -1,0 +1,11 @@
+/* project_name/static/css/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+h1 {
+    color: #343a40;
+}
+.navbar-brand {
+    font-weight: bold;
+}

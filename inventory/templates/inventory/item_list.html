@@ -1,0 +1,30 @@
+<!-- inventory/templates/inventory/item_list.html -->
+{% extends "base.html" %}
+
+{% block title %}Список майна{% endblock %}
+
+{% block content %}
+<h1>Список майна</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Назва</th>
+            <th>Код</th>
+            <th>Кількість</th>
+            <th>Склад</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.code }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.warehouse.name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

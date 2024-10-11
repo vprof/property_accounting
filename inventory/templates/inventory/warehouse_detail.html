@@ -1,0 +1,12 @@
+<!-- inventory/templates/inventory/warehouse_detail.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{ warehouse.name }}</h2>
+<p>Товари на складі:</p>
+<ul>
+    {% for item in items %}
+        <li>{{ item.name }} — {{ item.quantity }} шт.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
