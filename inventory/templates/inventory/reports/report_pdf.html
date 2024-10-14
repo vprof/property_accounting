@@ -27,9 +27,9 @@
             {% for item in items %}
             <tr>
                 <td>{{ item.name }}</td>
-                <td>{{ item.code }}</td>
-                <td>{{ item.quantity }}</td>
-                <td>{{ item.warehouse.name }}</td>
+                <td>{{ item.inventoryNumber }}</td>
+                <td>{{ item.series }}</td>
+                <td>{{ item.expirationDate }}</td>
             </tr>
             {% endfor %}
         </tbody>

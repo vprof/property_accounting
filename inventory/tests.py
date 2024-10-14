@@ -1,31 +1,31 @@
 # inventory/tests.py
 from django.test import TestCase
-from .models import Item, Warehouse
+from .models import Item, Unit
 
-class WarehouseModelTest(TestCase):
+class UnitModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         # Створюємо об'єкт складу для тестів
-        cls.warehouse = Warehouse.objects.create(name="Склад №1")
+        cls.unit = Unit.objects.create(unit="Склад №1")
 
-    def test_warehouse_name(self):
+    def test_unit_name(self):
         # Тест на перевірку правильності імені складу
-        self.assertEqual(self.warehouse.name, "Склад №1")
+        self.assertEqual(self.unit.unit, "Склад №1")
     
-    def test_warehouse_str(self):
-        # Тест на метод __str__ у моделі Warehouse
-        self.assertEqual(str(self.warehouse), "Склад №1")
+    def test_unit_str(self):
+        # Тест на метод __str__ у моделі unit
+        self.assertEqual(str(self.unit), "Склад №1")
 
 class ItemModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         # Створюємо об'єкт складу і товар для тестів
-        cls.warehouse = Warehouse.objects.create(name="Склад №1")
+        cls.unit = Unit.objects.create(unit="Склад №1")
         cls.item = Item.objects.create(
             name="Товар 1",
-            code="T001",
-            quantity=10,
-            warehouse=cls.warehouse
+            inventoryNumber="T001",
+            series=10,
+            initialCost=30
         )
 
     def test_item_name(self):
@@ -40,9 +40,9 @@ class ItemModelTest(TestCase):
         # Тест на перевірку кількості товару
         self.assertEqual(self.item.quantity, 10)
 
-    def test_item_warehouse(self):
+    def test_item_unit(self):
         # Тест на перевірку складу, до якого належить товар
-        self.assertEqual(self.item.warehouse.name, "Склад №1")
+        self.assertEqual(self.item.unit.unit, "Склад №1")
 
     def test_item_str(self):
         # Тест на метод __str__ у моделі Item

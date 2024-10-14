@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'inventory',           # Ім'я бази даних
         'USER': 'vprof',                # Ім'я користувача
         'PASSWORD': 'vprof',            # Пароль
-        'HOST': '10.10.21.229',       # Сервер MSSQL (localhost або IP-адреса)
+        'HOST': 'localhost',       # Сервер MSSQL (localhost або IP-адреса)
         'PORT': '1433',                         # Порт MSSQL (за замовчуванням 1433)
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',  # Вказуємо драйвер ODBC

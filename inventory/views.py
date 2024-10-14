@@ -1,13 +1,13 @@
 # inventory/views.py
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Item, Warehouse
+from .models import Item, Unit
 from .forms import ItemForm
 from django.http import HttpResponse
 
 def home(request):
     # Головна сторінка, яка може містити інформацію про склади або загальну статистику
-    warehouses = Warehouse.objects.all()
-    return render(request, 'inventory/home.html', {'warehouses': warehouses})
+    units = Unit.objects.all()
+    return render(request, 'inventory/home.html', {'units': units})
 
 def item_list(request):
     # Відображає список усіх об'єктів майна
@@ -29,18 +29,18 @@ def reports(request):
     # Логіка для генерації звітів або відображення сторінки
     return render(request, 'inventory/reports/report_pdf.html')
 
-def warehouse_detail(request, pk):
+def unit_detail(request, pk):
     # Відображає деталі конкретного складу та перелік товарів на ньому
-    warehouse = get_object_or_404(Warehouse, pk=pk)
-    items_in_warehouse = Item.objects.filter(warehouse=warehouse)
-    return render(request, 'inventory/warehouse_detail.html', {
-        'warehouse': warehouse,
-        'items': items_in_warehouse
+    unit = get_object_or_404(Unit, pk=pk)
+    items_in_unit = Item.objects.filter(unit=unit)
+    return render(request, 'inventory/unit_detail.html', {
+        'unit': unit,
+        'items': items_in_unit
     })
 
 def test_db_connection(request):
     # Створюємо або отримуємо існуючий запис
-    warehouse, _ = Warehouse.objects.get_or_create(name="Тестовий склад")
+    unit, _ = Unit.objects.get_or_create(unit="Тестовий склад")
 
     # Відображаємо підтвердження
-    return HttpResponse(f"Підключення успішне: {warehouse.name}")
+    return HttpResponse(f"Підключення успішне: {unit.unit}")

@@ -11,8 +11,8 @@
             <th>#</th>
             <th>Назва</th>
             <th>Код</th>
-            <th>Кількість</th>
-            <th>Склад</th>
+            <th>Серія</th>
+            <th>Термін</th>
         </tr>
     </thead>
     <tbody>
@@ -20,9 +20,9 @@
         <tr>
             <td>{{ forloop.counter }}</td>
             <td>{{ item.name }}</td>
-            <td>{{ item.code }}</td>
-            <td>{{ item.quantity }}</td>
-            <td>{{ item.warehouse.name }}</td>
+            <td>{{ item.inventoryNumber }}</td>
+            <td>{{ item.series }}</td>
+            <td>{{ item.expirationDate }}</td>
         </tr>
         {% endfor %}
     </tbody>

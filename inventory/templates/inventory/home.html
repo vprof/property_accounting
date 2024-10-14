@@ -4,8 +4,8 @@
 {% block content %}
 <h2>Склади</h2>
 <ul>
-    {% for warehouse in warehouses %}
-        <li><a href="{% url 'warehouse_detail' warehouse.pk %}">{{ warehouse.name }}</a></li>
+    {% for unit in units %}
+        <li><a href="{% url 'unit_detail' unit.pk %}">{{ unit.unit }}</a></li>
     {% endfor %}
 </ul>
 {% endblock %}
