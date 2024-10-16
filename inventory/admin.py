@@ -12,5 +12,5 @@ class ItemAdmin(admin.ModelAdmin):
 
 @admin.register(Unit)
 class UnitAdmin(admin.ModelAdmin):
-    list_display = ('unit',)  # Відображення назв складів
-    search_fields = ('unit',)  # Пошук за назвою складу
+    list_display = ('unitName',)  # Відображення назв складів
+    search_fields = ('unitName',)  # Пошук за назвою складу

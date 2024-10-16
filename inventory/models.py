@@ -29,7 +29,7 @@ class Item(models.Model):
         return self.name
 
 class Unit(models.Model):
-    unit = models.CharField(max_length=100)                # Одиниця
+    unitName = models.CharField(max_length=100)                # Одиниця
     for_print = models.CharField(max_length=128, null=True, blank=True)  # Поле для друку
     location = models.CharField(max_length=50, null=True, blank=True)    # Локація
 
@@ -37,11 +37,11 @@ class Unit(models.Model):
         db_table = 'units'         # Вказуємо ім'я таблиці в базі даних
         managed = False            # Django не буде керувати цією таблицею
         indexes = [
-            models.Index(fields=['unit'], name='ix_units_unit'),
+            models.Index(fields=['unitName'], name='ix_units_unit'),
         ]
 
     def __str__(self):
-        return self.unit
+        return self.unitName
 
 class Balance(models.Model):
     unit = models.ForeignKey(Unit, on_delete=models.CASCADE)            # Зовнішній ключ до Unit

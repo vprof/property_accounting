@@ -5,7 +5,7 @@
 <h2>Склади</h2>
 <ul>
     {% for unit in units %}
-        <li><a href="{% url 'unit_detail' unit.pk %}">{{ unit.unit }}</a></li>
+        <li><a href="{% url 'unit_detail' unit.pk %}">{{ unit.unitName }}</a></li>
     {% endfor %}
 </ul>
 {% endblock %}

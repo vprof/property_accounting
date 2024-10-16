@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Прихід майна{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Прихід майна</h2>
+    <form action="{% url 'operation_arrival' %}" method="post">
+        {% csrf_token %}
+        <!-- Поля для заповнення інформації про надходження майна -->
+        <label for="item">Майно:</label>
+        <input type="text" id="item" name="item">
+        
+        <label for="quantity">Кількість:</label>
+        <input type="number" id="quantity" name="quantity">
+        
+        <label for="price">Ціна:</label>
+        <input type="text" id="price" name="price">
+        
+        <button type="submit">Додати</button>
+    </form>
+</div>
+{% endblock %}

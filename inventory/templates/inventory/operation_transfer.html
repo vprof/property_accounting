@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Переміщення майна{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Переміщення майна</h2>
+    <form action="{% url 'operation_transfer' %}" method="post">
+        {% csrf_token %}
+        <!-- Поля для заповнення інформації про переміщення майна -->
+        <label for="item">Майно:</label>
+        <input type="text" id="item" name="item">
+        
+        <label for="from_unit">Звідки:</label>
+        <input type="text" id="from_unit" name="from_unit">
+        
+        <label for="to_unit">Куди:</label>
+        <input type="text" id="to_unit" name="to_unit">
+        
+        <button type="submit">Перемістити</button>
+    </form>
+</div>
+{% endblock %}

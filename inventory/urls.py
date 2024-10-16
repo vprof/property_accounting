@@ -9,4 +9,7 @@ urlpatterns = [
     path('reports/', views.reports, name='reports'),
     path('unit/<int:pk>/', views.unit_detail, name='unit_detail'),
     path('test-db/', views.test_db_connection, name='test_db_connection'),
+    path('operations/arrival/', views.operation_arrival, name='operation_arrival'),
+    path('operations/transfer/', views.operation_transfer, name='operation_transfer'),
+    path('operations/disposal/', views.operation_disposal, name='operation_disposal'),
 ]
