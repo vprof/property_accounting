@@ -9,7 +9,7 @@ nav ul {
 
 nav ul li {
     float: left;
-    position: relative; /* Батьківське позиціонування */
+    position: relative;
 }
 
 nav ul li a {
@@ -27,14 +27,14 @@ nav ul li a:hover {
 /* Підменю */
 nav ul li ul {
     display: none;
-    position: absolute; /* Відносно батька */
+    position: absolute;
     top: 100%;
     left: 0;
     background-color: #333;
     list-style-type: none;
     padding: 0;
     min-width: 160px;
-    z-index: 1000; /* Гарантує, що підменю буде зверху */
+    z-index: 1000;
 }
 
 nav ul li:hover ul {
@@ -54,4 +54,25 @@ nav ul li ul li a {
 
 nav ul li ul li a:hover {
     background-color: #555;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
 }
